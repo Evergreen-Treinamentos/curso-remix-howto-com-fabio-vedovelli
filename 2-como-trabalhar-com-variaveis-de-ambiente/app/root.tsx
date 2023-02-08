@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -6,6 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 
 export const meta: MetaFunction = () => ({
@@ -14,7 +16,17 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
+export function loader() {
+  return json({
+    ENV: {
+      TIMEOUT: ENV.TIMEOUT,
+    },
+  });
+}
+
 export default function App() {
+  const { ENV } = useLoaderData<typeof loader>();
+
   return (
     <html lang="en">
       <head>
@@ -24,6 +36,11 @@ export default function App() {
       <body>
         <Outlet />
         <ScrollRestoration />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(ENV)}`,
+          }}
+        />
         <Scripts />
         <LiveReload />
       </body>
