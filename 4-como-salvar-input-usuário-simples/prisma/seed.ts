@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 async function seed() {
   await prisma.user.deleteMany();
 
-  const quantity = 3;
+  const quantity = 12;
 
   Array.from(Array(quantity).keys()).forEach(async () => {
     await prisma.user.create({
