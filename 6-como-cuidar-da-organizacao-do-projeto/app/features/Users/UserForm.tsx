@@ -1,11 +1,7 @@
-import type { SomeZodObject } from "zod";
-import { Form } from "~/form";
+import { Form } from "~/remix-forms";
+import { schema } from "./users.api";
 
-interface UserFormProps {
-  schema: SomeZodObject;
-}
-
-export function UserForm({ schema }: UserFormProps) {
+export function UserForm() {
   return (
     <div className="pt-10 sm:mt-0">
       <div className="md:grid md:grid-cols-3 md:gap-6">

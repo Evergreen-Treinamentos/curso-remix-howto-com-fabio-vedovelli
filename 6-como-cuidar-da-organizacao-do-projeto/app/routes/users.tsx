@@ -1,16 +1,19 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { UsersTable } from "~/components/UsersTable";
-import { db } from "~/db.server";
+import { ErrorFeedback } from "~/components";
+import { getUsers, UsersTable } from "~/features/Users";
 
 export async function loader() {
-  const users = await db.user.findMany();
-
-  return json({ users });
+  return json({ users: await getUsers() });
 }
 
 export default function () {
   const { users } = useLoaderData<typeof loader>();
 
   return <UsersTable users={users} />;
+}
+
+export function ErrorBoundary() {
+  // Envia o erro para um serviço externo! Ex. Sentry, Bugsnag, etc.
+  return <ErrorFeedback />;
 }
