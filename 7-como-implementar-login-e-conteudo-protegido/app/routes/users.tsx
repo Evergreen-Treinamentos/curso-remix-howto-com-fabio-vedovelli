@@ -1,16 +1,27 @@
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { json, type LoaderArgs } from "@remix-run/node";
+import { Link, useLoaderData } from "@remix-run/react";
 import { ErrorFeedback } from "~/components";
 import { getUsers, UsersTable } from "~/features/Users";
+import { getLoggedUser } from "~/session.server";
 
-export async function loader() {
-  return json({ users: await getUsers() });
+export async function loader({ request }: LoaderArgs) {
+  const loggedUser = await getLoggedUser(request);
+
+  return json({ users: await getUsers(), loggedUser });
 }
 
 export default function () {
-  const { users } = useLoaderData<typeof loader>();
+  const { users, loggedUser } = useLoaderData<typeof loader>();
 
-  return <UsersTable users={users} />;
+  return (
+    <>
+      <header className="flex items-center justify-between p-6 bg-gray-100">
+        <p>Welcome {loggedUser.name}</p>
+        <Link to="/logout">Logout</Link>
+      </header>
+      <UsersTable users={users} />
+    </>
+  );
 }
 
 export function ErrorBoundary() {
