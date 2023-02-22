@@ -33,18 +33,9 @@ export async function action({ request }: ActionArgs) {
   });
 }
 
-const values: LoginInput = {
-  email: "Ricky22@yahoo.com",
-  password: "123456",
-};
-
 export default function () {
   return (
-    <Form
-      schema={LoginInputSchema}
-      values={values}
-      className="custom-form login-form"
-    >
+    <Form schema={LoginInputSchema} className="custom-form login-form">
       {({ Field, Errors, Button }) => (
         <>
           <Field name="email" autoFocus />
