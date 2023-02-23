@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 const password = "123456";
 
-async function seed() {
+async function users() {
   await prisma.user.deleteMany();
 
   const quantity = 12;
@@ -21,6 +21,30 @@ async function seed() {
       },
     });
   });
+}
+
+async function products() {
+  await prisma.product.deleteMany();
+
+  const quantity = 12;
+
+  Array.from(Array(quantity).keys()).forEach(async () => {
+    await prisma.product.create({
+      data: {
+        name: faker.commerce.productName(),
+        color: `${faker.color.human()} and ${faker.color.human()}`,
+        href: faker.internet.url(),
+        imageSrc: faker.image.cats(),
+        imageAlt: faker.lorem.sentence(),
+        price: faker.commerce.price(),
+      },
+    });
+  });
+}
+
+async function seed() {
+  // await users();
+  await products();
 }
 
 seed().finally(() => prisma.$disconnect());

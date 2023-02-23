@@ -18,3 +18,13 @@ model User {
   city  String?
   state String?
 }
+
+model Product {
+  id    Int     @id @default(autoincrement())
+  name String
+  color String
+  href String
+  imageSrc String
+  imageAlt String
+  price String
+}
