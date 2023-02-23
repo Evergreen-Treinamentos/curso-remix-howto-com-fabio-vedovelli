@@ -4,6 +4,7 @@ import {
   ShoppingBagIcon,
 } from "@heroicons/react/24/outline";
 import { Popover, Transition } from "@headlessui/react";
+import { Product } from "@prisma/client";
 
 const navigation = [
   { name: "Women", href: "#" },
@@ -11,31 +12,12 @@ const navigation = [
   { name: "Company", href: "#" },
   { name: "Stores", href: "#" },
 ];
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  // More products...
-];
 
-export function Cart() {
+interface Props {
+  products: Product[];
+}
+
+export function Cart({ products }: Props) {
   return (
     <header className="relative bg-white z-10">
       <nav aria-label="Top" className="mx-auto max-w-7xl sm:px-6 lg:px-8">
