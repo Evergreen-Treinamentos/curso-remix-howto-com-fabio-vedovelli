@@ -1255,6 +1255,18 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
+"@headlessui/react@^1.7.11":
+  version "1.7.11"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.11.tgz#1cc5750226abe5af2c94f72e975c0c8d2f5cc5a6"
+  integrity sha512-EaDbVgcyiylhtskZZf4Qb/JiiByY7cYbd0qgZ9xm2pm2X7hKojG0P4TaQYKgPOV3vojPhd/pZyQh3nmRkkcSyw==
+  dependencies:
+    client-only "^0.0.1"
+
+"@heroicons/react@^2.0.16":
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.16.tgz#562883c19ba2690c83380b42a9a5cce39dcbdb4a"
+  integrity sha512-x89rFxH3SRdYaA+JCXwfe+RkE1SFTo9GcOkZettHer71Y3T7V+ogKmfw5CjTazgS3d0ClJ7p1NA+SP7VQLQcLw==
+
 "@hookform/resolvers@^2.8.8":
   version "2.9.11"
   resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.11.tgz#9ce96e7746625a89239f68ca57c4f654264c17ef"
@@ -1611,6 +1623,13 @@
   integrity sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==
   dependencies:
     defer-to-connect "^2.0.0"
+
+"@tailwindcss/forms@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.3.tgz#e4d7989686cbcaf416c53f1523df5225332a86e7"
+  integrity sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
 
 "@testing-library/dom@^8.11.1":
   version "8.20.0"
@@ -2501,6 +2520,11 @@ cli-width@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-3.0.0.tgz#a2f48437a2caa9a22436e794bf071ec9e61cedf6"
   integrity sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==
+
+client-only@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
+  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
 clone-response@^1.0.2:
   version "1.0.3"
@@ -5188,6 +5212,11 @@ mimic-response@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-3.1.0.tgz#2d1d59af9c1b129815accc2c46a022a5ce1fa3c9"
   integrity sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==
+
+mini-svg-data-uri@^1.2.3:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
+  integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
 
 minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
