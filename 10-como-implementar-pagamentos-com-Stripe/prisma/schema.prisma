@@ -26,5 +26,5 @@ model Product {
   href String
   imageSrc String
   imageAlt String
-  price String
+  price Int
 }

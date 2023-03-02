@@ -1,5 +1,6 @@
 import { type Product } from "@prisma/client";
 import { Form, useNavigation } from "@remix-run/react";
+import { formatCurrency } from "../utils/currency";
 
 interface Props {
   products: Product[];
@@ -40,7 +41,7 @@ export function ProductList({ products }: Props) {
                       className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
                     />
                     <p className="relative text-lg font-semibold text-white">
-                      {product.price}
+                      {formatCurrency(product.price)}
                     </p>
                   </div>
                 </div>

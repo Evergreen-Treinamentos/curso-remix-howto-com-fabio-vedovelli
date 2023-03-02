@@ -36,7 +36,10 @@ async function products() {
         href: faker.internet.url(),
         imageSrc: faker.image.cats(),
         imageAlt: faker.lorem.sentence(),
-        price: faker.commerce.price(),
+        price: faker.datatype.number({
+          min: 1000,
+          max: 2000,
+        }),
       },
     });
   });

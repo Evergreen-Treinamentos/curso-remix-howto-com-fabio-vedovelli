@@ -1,2 +1,2 @@
 export * from "./Checkout";
-export * from "./checkout.api.server";
+export * from "./checkout.api";
