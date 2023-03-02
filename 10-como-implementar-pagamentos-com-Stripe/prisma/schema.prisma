@@ -28,3 +28,17 @@ model Product {
   imageAlt String
   price Int
 }
+
+model Order {
+  id String @id @default(uuid())
+  email String
+  address String
+  city String
+  state String
+  postal String
+  products String
+  totals String
+  stripePaymentIntentId String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}

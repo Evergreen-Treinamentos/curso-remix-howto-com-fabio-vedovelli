@@ -1,5 +1,6 @@
 import { type Product } from "@prisma/client";
 import { z } from "zod";
+import { db } from "~/db";
 
 export interface Totals {
   subTotal: number;
@@ -15,6 +16,17 @@ export const checkoutSchema = z.object({
   postal: z.string().min(1).trim(),
 });
 export type CheckoutType = z.infer<typeof checkoutSchema>;
+
+interface OrderInput extends CheckoutType {
+  totals: string;
+  products: string;
+}
+
+export function createOrder(data: OrderInput) {
+  return db.order.create({
+    data,
+  });
+}
 
 export function getTotals({ products }: { products: Product[] }): Totals {
   const subTotal = products.reduce((acc, product) => {

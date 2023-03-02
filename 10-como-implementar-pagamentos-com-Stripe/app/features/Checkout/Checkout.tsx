@@ -1,12 +1,21 @@
 import { type Product } from "@prisma/client";
 import { Form } from "~/remix-forms";
 import { type Totals } from "~/features/Checkout";
+import type { CheckoutType } from "./checkout.api";
 import { checkoutSchema } from "./checkout.api";
 
 interface Props {
   products: Product[];
   totals: Totals;
 }
+
+const values: CheckoutType = {
+  email: "vedovelli@gmail.com",
+  address: "123 Main St",
+  city: "San Francisco",
+  state: "CA",
+  postal: "94105",
+};
 
 export function Checkout({ products, totals }: Props) {
   return (
@@ -99,6 +108,7 @@ export function Checkout({ products, totals }: Props) {
 
           <Form
             schema={checkoutSchema}
+            values={values}
             className="custom-form mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0"
           >
             {({ Field, Errors, Button }) => (
