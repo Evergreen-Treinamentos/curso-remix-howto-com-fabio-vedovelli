@@ -21,6 +21,7 @@ export type CheckoutType = z.infer<typeof checkoutSchema>;
 interface OrderInput extends CheckoutType {
   totals: string;
   products: string;
+  stripePaymentIntentId?: string;
 }
 
 export function createOrder(data: OrderInput) {

@@ -33,7 +33,7 @@ export function Checkout({ products, totals }: Props) {
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-x-16 lg:grid-cols-2 lg:px-8 lg:pt-16">
         <h1 className="sr-only">Checkout</h1>
 
-        {/* <section
+        <section
           aria-labelledby="summary-heading"
           className="bg-indigo-900 py-12 text-indigo-300 md:px-10 lg:col-start-2 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg lg:bg-transparent lg:px-0 lg:pt-0 lg:pb-24"
         >
@@ -96,7 +96,7 @@ export function Checkout({ products, totals }: Props) {
               </div>
             </dl>
           </div>
-        </section> */}
+        </section>
 
         <section
           aria-labelledby="payment-and-shipping-heading"

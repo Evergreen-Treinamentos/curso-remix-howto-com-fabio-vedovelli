@@ -7,6 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 
 import stylesheet from "~/tailwind.css";
@@ -25,11 +26,14 @@ export async function loader() {
   return json({
     ENV: {
       STRIPE_PUBLIC_KEY: ENV.STRIPE_PUBLIC_KEY,
+      URL: ENV.URL,
     },
   });
 }
 
 export default function App() {
+  const { ENV } = useLoaderData<typeof loader>();
+
   return (
     <html lang="en">
       <head>

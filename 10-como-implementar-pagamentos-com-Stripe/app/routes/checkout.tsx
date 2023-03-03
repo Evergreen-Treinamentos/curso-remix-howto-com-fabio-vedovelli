@@ -1,6 +1,6 @@
 import { Checkout, createOrder, getTotals } from "~/features/Checkout";
-import { json, type LoaderArgs } from "@remix-run/node";
-import { getSession } from "~/session.server";
+import { json, redirect, type LoaderArgs } from "@remix-run/node";
+import { commitSession, getSession } from "~/session.server";
 import { useLoaderData } from "@remix-run/react";
 import formsStyles from "~/styles/forms.css";
 import type { ActionArgs } from "@remix-run/node";
@@ -23,9 +23,13 @@ export async function action({ request }: ActionArgs) {
     totals: JSON.stringify(totals),
   });
 
-  console.log(order);
+  session.set("orderId", order.id);
 
-  return null;
+  return redirect("/payment", {
+    headers: {
+      "Set-Cookie": await commitSession(session),
+    },
+  });
 }
 
 export async function loader({ request }: LoaderArgs) {
