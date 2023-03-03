@@ -8,7 +8,7 @@ export async function loader({ request }: LoaderArgs) {
   const session = await getSession(request.headers.get("Cookie"));
   const url = new URL(request.url);
   const paymentIntentId = url.searchParams.get("payment_intent");
-  const paymentIntent = await retrievePaymentIntent(paymentIntentId);
+  const paymentIntent = await retrievePaymentIntent(paymentIntentId ?? "");
 
   session.unset("orderId");
   session.unset("cartProducts");
