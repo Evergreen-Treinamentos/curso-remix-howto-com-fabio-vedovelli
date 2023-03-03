@@ -1,4 +1,5 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -20,6 +21,14 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
+export async function loader() {
+  return json({
+    ENV: {
+      STRIPE_PUBLIC_KEY: ENV.STRIPE_PUBLIC_KEY,
+    },
+  });
+}
+
 export default function App() {
   return (
     <html lang="en">
@@ -31,6 +40,11 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(ENV)}`,
+          }}
+        />
         <LiveReload />
       </body>
     </html>
