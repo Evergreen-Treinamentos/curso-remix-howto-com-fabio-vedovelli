@@ -22,9 +22,10 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <h1>Olá mundo!</h1>
         <Outlet />
         <ScrollRestoration />
-        <Scripts />
+        {/* <Scripts /> */}
         <LiveReload />
       </body>
     </html>
