@@ -35,7 +35,11 @@ export async function action({ request }: ActionArgs) {
 
 export default function () {
   return (
-    <Form schema={LoginInputSchema} className="custom-form login-form">
+    <Form
+      schema={LoginInputSchema}
+      values={{ email: "fabio@vedovelli.com.br", password: "123456" }}
+      className="custom-form login-form"
+    >
       {({ Field, Errors, Button }) => (
         <>
           <Field name="email" autoFocus />

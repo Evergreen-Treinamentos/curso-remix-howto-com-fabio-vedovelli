@@ -10,6 +10,16 @@ async function users() {
 
   const quantity = 12;
 
+  await prisma.user.create({
+    data: {
+      name: "Fabio Vedovelli",
+      email: `fabio@vedovelli.com.br`,
+      password: await bcrypt.hash(password, 10),
+      city: faker.address.city(),
+      state: faker.address.state(),
+    },
+  });
+
   Array.from(Array(quantity).keys()).forEach(async () => {
     await prisma.user.create({
       data: {
@@ -46,7 +56,7 @@ async function products() {
 }
 
 async function seed() {
-  // await users();
+  await users();
   await products();
 }
 
