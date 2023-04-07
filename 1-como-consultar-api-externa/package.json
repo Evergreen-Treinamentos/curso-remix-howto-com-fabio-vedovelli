@@ -8,21 +8,21 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@remix-run/node": "^1.12.0",
-    "@remix-run/react": "^1.12.0",
-    "@remix-run/serve": "^1.12.0",
-    "isbot": "^3.6.5",
+    "@remix-run/node": "1.15.0",
+    "@remix-run/react": "1.15.0",
+    "@remix-run/serve": "1.15.0",
+    "isbot": "3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "zod": "^3.20.2",
+    "zod": "3.21.4",
     "zod-fetch": "^0.1.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.12.0",
-    "@remix-run/eslint-config": "^1.12.0",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.8",
-    "eslint": "^8.27.0",
+    "@remix-run/dev": "1.15.0",
+    "@remix-run/eslint-config": "1.15.0",
+    "@types/react": "18.0.33",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.37.0",
     "typescript": "^4.8.4"
   },
   "engines": {
