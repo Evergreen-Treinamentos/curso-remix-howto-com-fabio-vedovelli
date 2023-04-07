@@ -1,0 +1,49 @@
+.login-form {
+  width: 400px;
+  margin: 48px auto;
+  background: #f4f4f4;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border: rgba(0, 0, 0, 0.05) solid 1px;
+}
+
+.custom-form div[role="alert"] {
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.custom-form input[type="text"],
+.custom-form input[type="email"],
+.custom-form input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  color: #555;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  padding: 14px 10px;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  width: 100%;
+}
+
+.custom-form div:has(input) {
+  margin-bottom: 15px;
+}
+
+.custom-form label {
+  color: #666;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 15px 0 5px;
+}
+
+.custom-form button {
+  background: blue;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
