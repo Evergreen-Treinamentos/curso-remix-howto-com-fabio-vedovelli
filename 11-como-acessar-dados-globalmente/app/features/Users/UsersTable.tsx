@@ -1,11 +1,13 @@
 import type { User } from "@prisma/client";
 import { Link, Outlet } from "@remix-run/react";
+// import { useLoggedUser } from "./context";
 
 interface UsersTableProps {
   users: User[];
 }
 
 export function UsersTable({ users }: UsersTableProps) {
+  // const { loggedUser } = useLoggedUser();
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
@@ -15,6 +17,7 @@ export function UsersTable({ users }: UsersTableProps) {
             A list of all the users in your account including their name, title,
             email and role.
           </p>
+          {/* <p>Logged as: {loggedUser?.name}</p> */}
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
           <Link

@@ -1,7 +1,13 @@
 import { Form } from "~/remix-forms";
 import { schema } from "./users.api";
+import { useLoggedUser, useUsersList } from "~/hooks/hooks";
+// import { useLoggedUser } from "./context";
 
 export function UserForm() {
+  // const { loggedUser } = useLoggedUser();
+  const loggedUser = useLoggedUser();
+  const users = useUsersList();
+
   return (
     <div className="pt-10 sm:mt-0">
       <div className="md:grid md:grid-cols-3 md:gap-6">
@@ -13,6 +19,8 @@ export function UserForm() {
             <p className="mt-1 text-sm text-gray-600">
               Use a permanent address where you can receive mail.
             </p>
+            <p>Logged user is: {loggedUser?.name}</p>
+            <p>User quantity: {users.length}</p>
           </div>
         </div>
         <div className="mt-5 md:col-span-2 md:mt-0">
