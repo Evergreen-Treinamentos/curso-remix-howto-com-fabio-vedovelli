@@ -1,3 +1,4 @@
+import type { User } from ".prisma/client";
 import { createCookieSessionStorage, redirect } from "@remix-run/node";
 
 const { getSession, commitSession, destroySession } =
@@ -15,11 +16,23 @@ const { getSession, commitSession, destroySession } =
 async function getLoggedUser(request: Request) {
   const session = await getSession(request.headers.get("Cookie"));
 
+  return session.get("user") as User;
+}
+
+async function isAuthenticated(request: Request) {
+  const session = await getSession(request.headers.get("Cookie"));
+
   if (!session.has("user")) {
     throw redirect("/login");
   }
 
-  return session.get("user");
+  return true;
 }
 
-export { getSession, commitSession, destroySession, getLoggedUser };
+export {
+  getSession,
+  commitSession,
+  destroySession,
+  getLoggedUser,
+  isAuthenticated,
+};

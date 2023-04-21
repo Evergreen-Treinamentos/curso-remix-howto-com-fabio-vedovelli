@@ -7,7 +7,7 @@ interface LoaderData {
 }
 
 export function useLoggedUser() {
-  const data = useRouteLoaderData("routes/users") as LoaderData;
+  const data = useRouteLoaderData("root") as LoaderData;
 
   return data.loggedUser;
 }
