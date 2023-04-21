@@ -17,7 +17,7 @@ export default function () {
   return (
     <>
       <header className="flex items-center justify-between p-6 bg-gray-100">
-        <p>Welcome {loggedUser.name}</p>
+        <p>Welcome {loggedUser?.name}</p>
         <Link to="/logout">Logout</Link>
       </header>
       <Suspense fallback={<Loading />}>
