@@ -1,12 +1,18 @@
-import { useMatches } from "@remix-run/react";
+import type { User } from "@prisma/client";
+import { useRouteLoaderData } from "@remix-run/react";
+
+interface LoaderData {
+  loggedUser?: User;
+  users?: User[];
+}
 
 export function useLoggedUser() {
-  const [root] = useMatches();
+  const data = useRouteLoaderData("routes/users") as LoaderData;
 
-  return root.data.loggedUser;
+  return data.loggedUser;
 }
 export function useUsersList() {
-  const [_, users] = useMatches();
+  const data = useRouteLoaderData("routes/users") as LoaderData;
 
-  return users.data.users;
+  return data.users;
 }

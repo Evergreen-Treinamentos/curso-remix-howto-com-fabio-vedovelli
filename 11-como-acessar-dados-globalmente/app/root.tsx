@@ -11,8 +11,8 @@ import {
 } from "@remix-run/react";
 
 import stylesheet from "~/tailwind.css";
-import { getLoggedUser } from "./session.server";
-import { UserContext } from "./features/Users/context";
+// import { getLoggedUser } from "./session.server";
+// import { UserContext } from "./features/Users/context";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -25,18 +25,19 @@ export const meta: MetaFunction = () => ({
 });
 
 export async function loader({ request }: LoaderArgs) {
-  const loggedUser = await getLoggedUser(request);
+  // const loggedUser = await getLoggedUser(request);
   return json({
     ENV: {
       STRIPE_PUBLIC_KEY: ENV.STRIPE_PUBLIC_KEY,
       URL: ENV.URL,
     },
-    loggedUser,
+    // loggedUser,
   });
 }
 
 export default function App() {
-  const { ENV, loggedUser } = useLoaderData<typeof loader>();
+  const { ENV } = useLoaderData<typeof loader>();
+  // const { ENV, loggedUser } = useLoaderData<typeof loader>();
 
   return (
     <html lang="en">
@@ -45,9 +46,10 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <UserContext.Provider value={{ loggedUser }}>
+        <Outlet />
+        {/* <UserContext.Provider value={{ loggedUser }}>
           <Outlet />
-        </UserContext.Provider>
+        </UserContext.Provider> */}
         <ScrollRestoration />
         <Scripts />
         <script
