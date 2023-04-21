@@ -33,7 +33,7 @@ export function UserForm() {
                       <Label className="block text-sm font-medium text-gray-700" />
                       <input
                         {...register("name")}
-                        className="h-8 mt-1 w-full border border-gray-50 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="h-8 mt-1 border block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
                       <Errors className="text-red-500 font-bold text-sm antialiased" />
                     </>
@@ -45,7 +45,7 @@ export function UserForm() {
                       <Label className="block text-sm font-medium text-gray-700" />
                       <input
                         {...register("email")}
-                        className="h-8 mt-1 w-full border border-gray-50 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="h-8 mt-1 border block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
                       <Errors className="text-red-500 font-bold text-sm antialiased" />
                     </>
@@ -57,7 +57,7 @@ export function UserForm() {
                       <Label className="block text-sm font-medium text-gray-700" />
                       <input
                         {...register("city")}
-                        className="h-8 mt-1 w-full border border-gray-50 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="h-8 mt-1 border block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
                       <Errors className="text-red-500 font-bold text-sm antialiased" />
                     </>
@@ -69,7 +69,7 @@ export function UserForm() {
                       <Label className="block text-sm font-medium text-gray-700" />
                       <input
                         {...register("state")}
-                        className="h-8 mt-1 w-full border border-gray-50 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="h-8 mt-1 border block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                       />
                       <Errors className="text-red-500 font-bold text-sm antialiased" />
                     </>
@@ -98,7 +98,7 @@ export function UserForm() {
                       name="name"
                       id="first-name"
                       autoComplete="name"
-                      className="h-8 mt-1 w-full border border-gray-50 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="h-8 mt-1 border block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
 
@@ -114,7 +114,7 @@ export function UserForm() {
                       name="email"
                       id="email-address"
                       autoComplete="email"
-                      className="h-8 mt-1 w-full border border-gray-50 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="h-8 mt-1 border block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
 
@@ -130,7 +130,7 @@ export function UserForm() {
                       name="city"
                       id="city-address"
                       autoComplete="city"
-                      className="h-8 mt-1 w-full border border-gray-50 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="h-8 mt-1 border block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
 
@@ -146,7 +146,7 @@ export function UserForm() {
                       name="state"
                       id="state"
                       autoComplete="state"
-                      className="h-8 mt-1 w-full border border-gray-50 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="h-8 mt-1 border block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                     />
                   </div>
                 </div>
