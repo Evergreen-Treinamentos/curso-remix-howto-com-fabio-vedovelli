@@ -1,17 +1,18 @@
-import { json, type LoaderArgs } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
-import { ErrorFeedback } from "~/components";
+import { defer, type LoaderArgs } from "@remix-run/node";
+import { Await, Link, useLoaderData } from "@remix-run/react";
+import { Suspense } from "react";
+import { ErrorFeedback, Loading } from "~/components";
 import { getUsers, UsersTable } from "~/features/Users";
 import { getLoggedUser } from "~/session.server";
 
 export async function loader({ request }: LoaderArgs) {
   const loggedUser = await getLoggedUser(request);
 
-  return json({ users: await getUsers(), loggedUser });
+  return defer({ users: getUsers(), loggedUser });
 }
 
 export default function () {
-  const { users, loggedUser } = useLoaderData<typeof loader>();
+  const { users: usersPromise, loggedUser } = useLoaderData<typeof loader>();
 
   return (
     <>
@@ -19,7 +20,11 @@ export default function () {
         <p>Welcome {loggedUser.name}</p>
         <Link to="/logout">Logout</Link>
       </header>
-      <UsersTable users={users} />
+      <Suspense fallback={<Loading />}>
+        <Await resolve={usersPromise}>
+          {(users) => <UsersTable users={users} />}
+        </Await>
+      </Suspense>
     </>
   );
 }

@@ -14,8 +14,12 @@ export const schema = z.object({
 
 type UserInput = z.infer<typeof schema>;
 
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export async function getUsers() {
-  return db.user.findMany();
+  return sleep(3000).then(() => db.user.findMany());
 }
 
 export async function saveUser(user: UserInput) {
