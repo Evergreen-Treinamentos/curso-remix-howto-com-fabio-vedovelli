@@ -9,6 +9,7 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
+import { withSentry } from "@sentry/remix";
 
 import stylesheet from "~/tailwind.css";
 import { getLoggedUser } from "./session.server";
@@ -34,7 +35,7 @@ export async function loader({ request }: LoaderArgs) {
   });
 }
 
-export default function App() {
+function App() {
   const { ENV } = useLoaderData<typeof loader>();
 
   return (
@@ -57,3 +58,5 @@ export default function App() {
     </html>
   );
 }
+
+export default withSentry(App);

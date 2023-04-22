@@ -5,6 +5,14 @@ import { RemixServer } from "@remix-run/react";
 import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { getEnv } from "./env.server";
+import * as Sentry from "@sentry/remix";
+import { db } from "./db";
+
+Sentry.init({
+  dsn: "https://576765691eee474d83f7c0fc9bbd818f:3620285f12934cef91cf815f4b8964a2@o4505052140601344.ingest.sentry.io/4505057340817408",
+  tracesSampleRate: 1,
+  integrations: [new Sentry.Integrations.Prisma({ client: db })],
+});
 
 const ABORT_DELAY = 5000;
 

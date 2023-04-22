@@ -17,6 +17,7 @@
     "@remix-run/node": "1.13.0",
     "@remix-run/react": "1.13.0",
     "@remix-run/serve": "1.13.0",
+    "@sentry/remix": "^7.49.0",
     "@stripe/react-stripe-js": "^1.16.5",
     "@stripe/stripe-js": "^1.48.0",
     "bcryptjs": "^2.4.3",
