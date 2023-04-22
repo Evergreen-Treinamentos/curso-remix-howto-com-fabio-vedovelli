@@ -1,34 +1,26 @@
-import { defer, type LoaderArgs } from "@remix-run/node";
-import { Await, useLoaderData } from "@remix-run/react";
-import { Suspense } from "react";
-import { Layout } from "~/Layouts/Layout";
-import { ErrorFeedback, Loading } from "~/components";
+import { json, type LoaderArgs } from "@remix-run/node";
+import { Link, useLoaderData } from "@remix-run/react";
+import { ErrorFeedback } from "~/components";
 import { getUsers, UsersTable } from "~/features/Users";
-import { isAuthenticated } from "~/session.server";
+import { getLoggedUser } from "~/session.server";
 
 export async function loader({ request }: LoaderArgs) {
-  await isAuthenticated(request);
-  return defer(
-    { users: getUsers() },
-    {
-      headers: {
-        "Cache-Control": "max-age=60",
-      },
-    }
-  );
+  const loggedUser = await getLoggedUser(request);
+
+  return json({ users: await getUsers(), loggedUser });
 }
 
 export default function () {
-  const { users: usersPromise } = useLoaderData<typeof loader>();
+  const { users, loggedUser } = useLoaderData<typeof loader>();
 
   return (
-    <Layout>
-      <Suspense fallback={<Loading />}>
-        <Await resolve={usersPromise}>
-          {(users) => <UsersTable users={users} />}
-        </Await>
-      </Suspense>
-    </Layout>
+    <>
+      <header className="flex items-center justify-between p-6 bg-gray-100">
+        <p>Welcome {loggedUser.name}</p>
+        <Link to="/logout">Logout</Link>
+      </header>
+      <UsersTable users={users} />
+    </>
   );
 }
 
