@@ -1,5 +1,7 @@
 import type { LoaderArgs } from "@remix-run/node";
+import { ClientOnly } from "remix-utils";
 import { Layout } from "~/Layouts/Layout";
+import Button from "~/components/Button";
 import { isAuthenticated } from "~/session.server";
 
 export async function loader({ request }: LoaderArgs) {
@@ -25,6 +27,13 @@ export default function () {
           eligendi. Aliquid natus consequuntur rem harum. Alias non iste quae
           autem?
         </p>
+        <ClientOnly>
+          {() => (
+            <div className="py-6">
+              <Button />
+            </div>
+          )}
+        </ClientOnly>
       </div>
     </Layout>
   );
