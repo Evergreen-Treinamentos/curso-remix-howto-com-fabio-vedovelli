@@ -15,11 +15,23 @@ const { getSession, commitSession, destroySession } =
 async function getLoggedUser(request: Request) {
   const session = await getSession(request.headers.get("Cookie"));
 
+  return session.get("user");
+}
+
+async function isAuthenticated(request: Request) {
+  const session = await getSession(request.headers.get("Cookie"));
+
   if (!session.has("user")) {
     throw redirect("/login");
   }
 
-  return session.get("user");
+  return true;
 }
 
-export { getSession, commitSession, destroySession, getLoggedUser };
+export {
+  getSession,
+  commitSession,
+  destroySession,
+  getLoggedUser,
+  isAuthenticated,
+};
