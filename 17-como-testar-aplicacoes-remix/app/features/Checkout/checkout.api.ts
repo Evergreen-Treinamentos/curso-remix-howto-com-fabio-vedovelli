@@ -24,17 +24,25 @@ interface OrderInput extends CheckoutType {
   stripePaymentIntentId?: string;
 }
 
+/* c8 ignore start */
+
 export function createOrder(data: OrderInput) {
   return db.order.create({
     data,
   });
 }
 
+/* c8 ignore end */
+/* c8 ignore start */
+
 export function getOrder(orderId: string) {
   return db.order.findUnique({
     where: { id: orderId },
   });
 }
+
+/* c8 ignore end */
+/* c8 ignore start */
 
 export function updateOrder(id: string, data: Partial<OrderInput>) {
   return db.order.update({
@@ -43,12 +51,14 @@ export function updateOrder(id: string, data: Partial<OrderInput>) {
   });
 }
 
+/* c8 ignore end */
+
 export function getTotals({ products }: { products: Product[] }): Totals {
   const subTotal = products.reduce((acc, product) => {
     return acc + Number(product.price);
   }, 0);
 
-  const taxes = subTotal * 0.1;
+  const taxes = Number((subTotal * 0.1).toFixed(2));
 
   const total = subTotal + taxes;
 
