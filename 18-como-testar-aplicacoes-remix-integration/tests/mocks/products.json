@@ -1,0 +1,110 @@
+[
+  {
+    "id": 37,
+    "name": "Fantastic Steel Cheese",
+    "color": "red and orange",
+    "href": "http://pointed-broadcast.net",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Sint similique quasi fugit.",
+    "price": 1188
+  },
+  {
+    "id": 38,
+    "name": "Practical Concrete Pants",
+    "color": "orange and teal",
+    "href": "https://giddy-bookend.name",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Illo ex dolor.",
+    "price": 1032
+  },
+  {
+    "id": 39,
+    "name": "Sleek Plastic Computer",
+    "color": "ivory and green",
+    "href": "http://ruddy-humor.org",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Beatae hic distinctio magnam explicabo quas sequi voluptate distinctio.",
+    "price": 1032
+  },
+  {
+    "id": 40,
+    "name": "Modern Soft Shirt",
+    "color": "maroon and sky blue",
+    "href": "http://legal-meme.name",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Illo aspernatur nihil sapiente.",
+    "price": 1209
+  },
+  {
+    "id": 41,
+    "name": "Rustic Wooden Pants",
+    "color": "salmon and grey",
+    "href": "https://entire-hemp.com",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Iste tempora nesciunt a at consequatur provident saepe deleniti atque.",
+    "price": 1440
+  },
+  {
+    "id": 42,
+    "name": "Electronic Wooden Chips",
+    "color": "plum and lavender",
+    "href": "http://unwieldy-interloper.com",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Ducimus et beatae necessitatibus placeat.",
+    "price": 1178
+  },
+  {
+    "id": 43,
+    "name": "Fantastic Plastic Car",
+    "color": "lime and tan",
+    "href": "https://torn-bake.net",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Amet repudiandae illum placeat ipsam adipisci.",
+    "price": 1260
+  },
+  {
+    "id": 44,
+    "name": "Electronic Steel Hat",
+    "color": "sky blue and azure",
+    "href": "http://multicolored-thunderstorm.net",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Eaque nemo aspernatur deserunt illo praesentium ipsam ullam porro.",
+    "price": 1987
+  },
+  {
+    "id": 45,
+    "name": "Refined Steel Pizza",
+    "color": "grey and azure",
+    "href": "https://pertinent-vivo.com",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Soluta dolorem harum.",
+    "price": 1243
+  },
+  {
+    "id": 46,
+    "name": "Oriental Concrete Chips",
+    "color": "cyan and lavender",
+    "href": "https://quick-witted-sherry.org",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Reprehenderit officiis nisi incidunt officiis rem.",
+    "price": 1719
+  },
+  {
+    "id": 47,
+    "name": "Sleek Bronze Ball",
+    "color": "salmon and red",
+    "href": "https://majestic-geography.info",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Error nesciunt repellendus asperiores provident soluta.",
+    "price": 1579
+  },
+  {
+    "id": 48,
+    "name": "Handmade Fresh Tuna",
+    "color": "lime and turquoise",
+    "href": "https://rowdy-blowhole.com",
+    "imageSrc": "https://loremflickr.com/640/480/cats",
+    "imageAlt": "Officiis labore recusandae necessitatibus dolor debitis maxime esse aspernatur.",
+    "price": 1718
+  }
+]
